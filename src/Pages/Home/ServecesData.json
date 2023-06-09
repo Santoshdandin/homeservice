@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "title": "Plumbing Services",
+        "description": "Professional plumbing services for residential and commercial properties.",
+        "image": "https://example.com/plumbing.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Electrical Services",
+        "description": "Expert electrical services including installations, repairs, and maintenance.",
+        "image": "https://example.com/electrical.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Cleaning Services",
+        "description": "Efficient and reliable cleaning services for homes and offices.",
+        "image": "https://example.com/cleaning.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Painting Services",
+        "description": "Professional painting services for interior and exterior surfaces.",
+        "image": "https://example.com/painting.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Landscaping Services",
+        "description": "Complete landscaping services including lawn maintenance and garden design.",
+        "image": "https://example.com/landscaping.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Carpentry Services",
+        "description": "Skilled carpentry services for custom furniture and woodworking projects.",
+        "image": "https://example.com/carpentry.jpg"
+      },
+      {
+        "id": 7,
+        "title": "HVAC Services",
+        "description": "Heating, ventilation, and air conditioning services for optimal indoor comfort.",
+        "image": "https://example.com/hvac.jpg"
+      },
+      {
+        "id": 8,
+        "title": "Pest Control Services",
+        "description": "Effective pest control services to eliminate pests from your property.",
+        "image": "https://example.com/pest-control.jpg"
+      },
+      {
+        "id": 9,
+        "title": "Roofing Services",
+        "description": "Professional roofing services including repairs, installations, and inspections.",
+        "image": "https://example.com/roofing.jpg"
+      },
+      {
+        "id": 10,
+        "title": "Appliance Repair Services",
+        "description": "Expert appliance repair services for all major brands and models.",
+        "image": "https://example.com/appliance-repair.jpg"
+      },
+      {
+        "id": 11,
+        "title": "Interior Design Services",
+        "description": "Creative interior design services to transform your living spaces.",
+        "image": "https://example.com/interior-design.jpg"
+      },
+      {
+        "id": 12,
+        "title": "Flooring Services",
+        "description": "High-quality flooring services including installation and refinishing.",
+        "image": "https://example.com/flooring.jpg"
+      },
+      {
+        "id": 13,
+        "title": "Home Security Services",
+        "description": "Comprehensive home security solutions for peace of mind.",
+        "image": "https://example.com/home-security.jpg"
+      },
+      {
+        "id": 14,
+        "title": "Window and Door Services",
+        "description": "Professional window and door installation and repair services.",
+        "image": "https://example.com/window-door.jpg"
+      },
+      {
+        "id": 15,
+        "title": "Moving and Storage Services",
+        "description": "Reliable moving and storage services for a stress-free relocation.",
+        "image": "https://example.com/moving-storage.jpg"
+      },
+      {
+        "id": 16,
+        "title": "Bathroom Remodeling Services",
+        "description": "Expert bathroom remodeling services to enhance your bathroom space.",
+        "image": "https://example.com/bathroom-remodeling.jpg"
+      },
+      {
+        "id": 17,
+        "title": "Kitchen Remodeling Services",
+        "description": "Professional kitchen remodeling services to create your dream kitchen.",
+        "image": "https://example.com/kitchen-remodeling.jpg"
+      },
+      {
+        "id": 18,
+        "title": "Home Theater Services",
+        "description": "Custom home theater installations and audiovisual solutions.",
+        "image": "https://example.com/home-theater.jpg"
+      },
+      {
+        "id": 19,
+        "title": "Fencing Services",
+        "description": "Durable fencing solutions for enhanced privacy and security.",
+        "image": "https://example.com/fencing.jpg"
+      },
+      {
+        "id": 20,
+        "title": "Plastering and Drywall Services",
+        "description": "Expert plastering and drywall services for smooth and seamless walls.",
+        "image": "https://example.com/plastering-drywall.jpg"
+      },
+      {
+        "id": 21,
+        "title": "Gutter Services",
+        "description": "Professional gutter installation, repair, and maintenance services.",
+        "image": "https://example.com/gutter.jpg"
+      },
+      {
+        "id": 22,
+        "title": "Deck and Patio Services",
+        "description": "Custom deck and patio construction and renovation services.",
+        "image": "https://example.com/deck-patio.jpg"
+      },
+      {
+        "id": 23,
+        "title": "Concrete Services",
+        "description": "Expert concrete services for driveways, sidewalks, and foundations.",
+        "image": "https://example.com/concrete.jpg"
+      },
+      {
+        "id": 24,
+        "title": "Masonry Services",
+        "description": "Skilled masonry services for brickwork, stonework, and repairs.",
+        "image": "https://example.com/masonry.jpg"
+      },
+      {
+        "id": 25,
+        "title": "Pressure Washing Services",
+        "description": "Professional pressure washing services to clean and restore surfaces.",
+        "image": "https://example.com/pressure-washing.jpg"
+      },
+      {
+        "id": 26,
+        "title": "Solar Panel Services",
+        "description": "Installation and maintenance of solar panel systems for energy efficiency.",
+        "image": "https://example.com/solar-panels.jpg"
+      },
+      {
+        "id": 27,
+        "title": "Handyman Services",
+        "description": "Reliable handyman services for a wide range of home repairs and tasks.",
+        "image": "https://example.com/handyman.jpg"
+      },
+      {
+        "id": 28,
+        "title": "Home Insulation Services",
+        "description": "Insulation installation and upgrades for improved energy efficiency.",
+        "image": "https://example.com/home-insulation.jpg"
+      },
+      {
+        "id": 29,
+        "title": "Home Automation Services",
+        "description": "Smart home automation solutions for enhanced convenience and control.",
+        "image": "https://example.com/home-automation.jpg"
+      },
+      {
+        "id": 30,
+        "title": "Waterproofing Services",
+        "description": "Effective waterproofing solutions for basements and foundations.",
+        "image": "https://example.com/waterproofing.jpg"
+      },
+      {
+        "id": 31,
+        "title": "Tree Services",
+        "description": "Tree trimming, removal, and maintenance services by certified arborists.",
+        "image": "https://example.com/tree-services.jpg"
+      },
+      {
+        "id": 32,
+        "title": "Home Staging Services",
+        "description": "Professional home staging services to enhance property appeal.",
+        "image": "https://example.com/home-staging.jpg"
+      },
+      {
+        "id": 33,
+        "title": "Exterior Renovation Services",
+        "description": "Renovation and remodeling services for the exterior of your home.",
+        "image": "https://example.com/exterior-renovation.jpg"
+      },
+      {
+        "id": 34,
+        "title": "Home Additions",
+        "description": "Custom home additions and extensions to meet your space requirements.",
+        "image": "https://example.com/home-additions.jpg"
+      },
+      {
+        "id": 35,
+        "title": "Septic Services",
+        "description": "Septic system installation, maintenance, and repairs.",
+        "image": "https://example.com/septic-services.jpg"
+      },
+      {
+        "id": 36,
+        "title": "Water Damage Restoration",
+        "description": "Water damage cleanup, restoration, and mold remediation services.",
+        "image": "https://example.com/water-damage-restoration.jpg"
+      },
+      {
+        "id": 37,
+        "title": "Home Energy Audits",
+        "description": "Comprehensive home energy audits to identify energy-saving opportunities.",
+        "image": "https://example.com/home-energy-audits.jpg"
+      },
+      {
+        "id": 38,
+        "title": "Locksmith Services",
+        "description": "Emergency locksmith services and lock installation and repair.",
+        "image": "https://example.com/locksmith.jpg"
+      },
+      {
+        "id": 39,
+        "title": "Home Office Setup",
+        "description": "Professional home office setup and organization services.",
+        "image": "https://example.com/home-office-setup.jpg"
+      },
+      {
+        "id": 40,
+        "title": "Home Gym Setup",
+        "description": "Design and installation of customized home gym spaces.",
+        "image": "https://example.com/home-gym-setup.jpg"
+      },
+      {
+        "id": 41,
+        "title": "Fireplace Services",
+        "description": "Fireplace installation, repair, and maintenance services.",
+        "image": "https://example.com/fireplace-services.jpg"
+      },
+      {
+        "id": 42,
+        "title": "Home Exterior Cleaning",
+        "description": "Exterior cleaning services for roofs, siding, and gutters.",
+        "image": "https://example.com/home-exterior-cleaning.jpg"
+      },
+      {
+        "id": 43,
+        "title": "Smart Thermostat Installation",
+        "description": "Installation and setup of smart thermostats for energy efficiency.",
+        "image": "https://example.com/smart-thermostat.jpg"
+      },
+      {
+        "id": 44,
+        "title": "Drain Cleaning Services",
+        "description": "Professional drain cleaning and unclogging services.",
+        "image": "https://example.com/drain-cleaning.jpg"
+      },
+      {
+        "id": 45,
+        "title": "Home Water Filtration",
+        "description": "Installation of home water filtration and purification systems.",
+        "image": "https://example.com/home-water-filtration.jpg"
+      },
+      {
+        "id": 46,
+        "title": "Garage Door Services",
+        "description": "Garage door installation, repair, and maintenance services.",
+        "image": "https://example.com/garage-door-services.jpg"
+      },
+      {
+        "id": 47,
+        "title": "Home Window Tinting",
+        "description": "Professional home window tinting services for improved energy efficiency.",
+        "image": "https://example.com/window-tinting.jpg"
+      },
+      {
+        "id": 48,
+        "title": "Home Air Duct Cleaning",
+        "description": "Thorough air duct cleaning and HVAC system maintenance services.",
+        "image": "https://example.com/air-duct-cleaning.jpg"
+      },
+      {
+        "id": 49,
+        "title": "Home Exterior Painting",
+        "description": "Expert home exterior painting and surface preparation services.",
+        "image": "https://example.com/exterior-painting.jpg"
+      },
+      {
+        "id": 50,
+        "title": "Holiday Lighting Installation",
+        "description": "Professional holiday lighting installation and decoration services.",
+        "image": "https://example.com/holiday-lighting.jpg"
+      }
+  ]
