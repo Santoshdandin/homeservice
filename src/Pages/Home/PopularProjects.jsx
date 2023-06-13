@@ -10,7 +10,7 @@ const PopularProjects = () => {
 
     const projects = [
         {img:'https://hometriangle.com/web/assets/images/x-300x200/jpg/ac-repair-services.jpg',
-    title:'AC Services',
+    title:'AC Repair Services',
 min:500,
 max:'3k'},
 

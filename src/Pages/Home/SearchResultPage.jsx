@@ -6,6 +6,7 @@ import servicesData from '../../Data/ServecesData.json';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import { Link } from '@mui/material';
 
 const SearchResultsPage = () => {
  
@@ -41,7 +42,7 @@ const SearchResultsPage = () => {
         {filteredData.map(({image,title,range})=>{
             return (
 
-                <Card sx={{cursor:'pointer' }}>
+              <Link href={`/services/${title}`} color="inherit" underline="none"> <Card sx={{cursor:'pointer' }}>
       
         <CardMedia
           component="img"
@@ -60,7 +61,7 @@ const SearchResultsPage = () => {
         </CardContent>
       
       
-    </Card>
+    </Card> </Link> 
 
             )
         })}
