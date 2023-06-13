@@ -50,6 +50,7 @@ const searchQuery = params.name
         <Box
           display={"flex"}
           justifyContent={"center"}
+          alignItems={'center'}
           position={"relative"}
           sx={{
             minWidth: "100%",
@@ -63,9 +64,8 @@ const searchQuery = params.name
 
           <Box
             display={"flex"}
-            flexDirection={"column"}
-            
-            pt={'70px'}
+            flexDirection={"column"} 
+            pb={'20px'}
             width={"100%"}
             maxWidth={"73rem"}
             height={"maxContent"}
@@ -75,14 +75,16 @@ const searchQuery = params.name
             position={"relative"}
             textAlign={"left"}
             color={"#FFFFFF"}
+            justifyContent={'center'}
           >
             {/* hero title */}
 
             <Box
               display={{xs:'grid',md:"flex"}} gridTemplateColumns={'1fr'} gap={'40px'}
-              justifyItems={{md:"flex-start",xs:'center'}} pb={{xs:'30px'}}
+              justifyItems={{md:"center",xs:'center'}}  pb={{xs:'30px'}}
             >
-              <Box>
+              {/* Image */}
+              <Box >
                 <Box
                   width={"300px"}
                   height={"300px"}
@@ -97,13 +99,17 @@ const searchQuery = params.name
                   />
                 </Box>
               </Box>
-              <Box>
+
+              {/* Heading */}
+
+              <Box display={'flex'} flexDirection={'column'} alignItems={{xs:'center',md:'flex-Start'}}>
                 <Typography
                 color={'#343f52'}
                   fontSize={"3rem"}
                   fontWeight={700}
                   lineHeight={"3rem"}
                   textTransform={'capitalize'}
+
                 >
                   {service.title}
                 </Typography>
@@ -136,7 +142,7 @@ const searchQuery = params.name
                 bgcolor={"rgba(0, 0, 0, 0.75)"}
                 borderRadius={"0.625rem"}
                 padding={"1rem"}
-                width={"10rem"}
+                width={{md:"10rem",xs:'8rem'}}
               >
                 <Typography
                   fontSize={"1rem"}
@@ -162,7 +168,7 @@ const searchQuery = params.name
                 bgcolor={"rgba(0, 0, 0, 0.75)"}
                 borderRadius={"0.625rem"}
                 padding={"1rem"}
-                width={"10rem"}
+                width={{md:"10rem",xs:'8rem'}}
               >
                 <Typography
                   fontSize={"1rem"}
@@ -188,7 +194,7 @@ const searchQuery = params.name
                 bgcolor={"rgba(0, 0, 0, 0.75)"}
                 borderRadius={"0.625rem"}
                 padding={"1rem"}
-                width={"10rem"}
+                width={{md:"10rem",xs:'8rem'}}
               >
                 <Typography
                   fontSize={"1rem"}
@@ -214,7 +220,7 @@ const searchQuery = params.name
                 bgcolor={"rgba(0, 0, 0, 0.75)"}
                 borderRadius={"0.625rem"}
                 padding={"1rem"}
-                width={"10rem"}
+                width={{md:"10rem",xs:'8rem'}}
               >
                 <Typography
                   fontSize={"1rem"}

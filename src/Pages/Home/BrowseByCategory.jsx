@@ -198,7 +198,7 @@ title:'Swimming Classes',
         {maintenance.map(({img,title,min,max})=>{
             return (
 
-              <Link href={`/services/${title}`} color="inherit" underline="none">    <Card sx={{cursor:'pointer' }}>
+              <Link href={`/services/${title}`} color="inherit" underline="none">    <Card sx={{cursor:'pointer',minHeight:'320px' }}>
       
         <CardMedia
           component="img"
@@ -211,7 +211,7 @@ title:'Swimming Classes',
             {title}
           </Typography>
           <Typography color={'#3f78e0'} fontSize={'18px'} fontWeight={500}>
-        ₹{min} - ₹{max}
+        SAR {min} - SAR {max}
         </Typography>
           
         </CardContent>
@@ -228,11 +228,11 @@ title:'Swimming Classes',
 
 
       <TabPanel value={value} index={1}>
-      <Box display={'grid'} gridTemplateColumns={'1fr 1fr 1fr 1fr'} gap={'20px'}>
+      <Box display={'grid'} gridTemplateColumns={{xs:'1fr 1fr',md:'1fr 1fr 1fr 1fr'}} gap={'20px'}>
         {remodelling.map(({img,title,min,max})=>{
             return (
 
-              <Link href={`/services/${title}`} color="inherit" underline="none">     <Card sx={{cursor:'pointer' }}>
+              <Link href={`/services/${title}`} color="inherit" underline="none">     <Card sx={{cursor:'pointer',minHeight:'320px' }}>
       
         <CardMedia
           component="img"
@@ -245,7 +245,7 @@ title:'Swimming Classes',
             {title}
           </Typography>
           <Typography color={'#3f78e0'} fontSize={'18px'} fontWeight={500}>
-        ₹{min} - ₹{max}
+        SAR {min} - SAR {max}
         </Typography>
           
         </CardContent>
@@ -261,11 +261,11 @@ title:'Swimming Classes',
       </TabPanel>
 
       <TabPanel value={value} index={2}>
-      <Box display={'grid'} gridTemplateColumns={'1fr 1fr 1fr 1fr'} gap={'20px'}>
+      <Box display={'grid'} gridTemplateColumns={{xs:'1fr 1fr',md:'1fr 1fr 1fr 1fr'}} gap={'20px'}>
         {appliances.map(({img,title,min,max})=>{
             return (
 
-              <Link href={`/services/${title}`} color="inherit" underline="none">  <Card sx={{ cursor:'pointer' }}>
+              <Link href={`/services/${title}`} color="inherit" underline="none">  <Card sx={{ cursor:'pointer',minHeight:'320px' }}>
       
         <CardMedia
           component="img"
@@ -278,7 +278,7 @@ title:'Swimming Classes',
             {title}
           </Typography>
           <Typography color={'#3f78e0'} fontSize={'18px'} fontWeight={500}>
-        ₹{min} - ₹{max}
+        SAR {min} - SAR {max}
         </Typography>
           
         </CardContent>
@@ -294,11 +294,11 @@ title:'Swimming Classes',
       </TabPanel>
 
       <TabPanel value={value} index={3}>
-      <Box display={'grid'} gridTemplateColumns={'1fr 1fr 1fr 1fr'} gap={'20px'}>
+      <Box display={'grid'} gridTemplateColumns={{xs:'1fr 1fr',md:'1fr 1fr 1fr 1fr'}} gap={'20px'}>
         {events.map(({img,title,min,max})=>{
             return (
 
-              <Link href={`/services/${title}`} color="inherit" underline="none">    <Card sx={{ cursor:'pointer' }}>
+              <Link href={`/services/${title}`} color="inherit" underline="none">    <Card sx={{ cursor:'pointer',minHeight:'320px' }}>
       
         <CardMedia
           component="img"
@@ -311,7 +311,7 @@ title:'Swimming Classes',
             {title}
           </Typography>
           <Typography color={'#3f78e0'} fontSize={'18px'} fontWeight={500}>
-        ₹{min} - ₹{max}
+        SAR {min} - SAR {max}
         </Typography>
           
         </CardContent>
@@ -327,11 +327,11 @@ title:'Swimming Classes',
       </TabPanel>
 
       <TabPanel value={value} index={4}>
-      <Box display={'grid'} gridTemplateColumns={'1fr 1fr 1fr 1fr'} gap={'20px'}>
+      <Box display={'grid'} gridTemplateColumns={{xs:'1fr 1fr',md:'1fr 1fr 1fr 1fr'}} gap={'20px'}>
         {personal.map(({img,title})=>{
             return (
 
-              <Link href={`/services/${title}`} color="inherit" underline="none">     <Card sx={{ cursor:'pointer',bgcolor:'#fff' }}>
+              <Link href={`/services/${title}`} color="inherit" underline="none">     <Card sx={{ cursor:'pointer',minHeight:'290px',bgcolor:'#fff' }}>
       
         <CardMedia
           component="img"

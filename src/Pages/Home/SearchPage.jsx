@@ -59,16 +59,17 @@ const SearchPage = () => {
         alignItems: 'center',
         display:'flex',
         flexDirection:'column',
-        marginBottom:'7rem'
+        marginBottom:'7rem',
+        justifyContent:'center'
         
       }}
     >
-      <Box textAlign={'center'} maxWidth={{md:'500px',xs:'700px'}} my={'30px'} color={'#343f52'}  >
-        <Typography fontWeight={700} fontSize={'52px'} lineHeight={1.2}  >
+      <Box textAlign={'center'} maxWidth={{md:'500px',xs:'350px'}} mb={'30px'}  alignContent={'center'} color={'#343f52'}  >
+        <Typography fontWeight={700} fontSize={{md:'52px',xs:'35px'}} lineHeight={1.2}  >
          {` Connect with experts to make life `} 
-          <Typography position={'relative'} component={'span'} fontWeight={700} fontSize={'52px'} lineHeight={1.2} >
+          <Typography position={'relative'} component={'span'} fontWeight={700} fontSize={{md:'52px',xs:'35px'}} lineHeight={1.2} >
            easier
-           <Box position={'absolute'} top={'-14px'} right={0}>
+           <Box position={'absolute'} top={{md:'-14px',xs:'-35px'}} right={0}>
            <img src='/Assets/Images/underline.svg' width={'150px'}  />
 
            </Box>
@@ -89,11 +90,11 @@ const SearchPage = () => {
         onInputChange={(event, value) => setSearchQuery(value)}
         // onChange={(event, value) => handleSuggestionClick(value)}
         size="large"
-        sx={{width:{xs:'80%',md:'30%'}}}
+        sx={{width:{xs:'70%',md:'30%'}}}
         renderInput={(params) => (
           <TextField
             {...params}
-            placeholder='Search for home services...'
+            placeholder='Ex:Home services,cleaning..'
             value={searchQuery}
             sx={{background:'#fff'}}
            

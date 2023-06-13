@@ -19,7 +19,7 @@ const Playstore = () => {
           />
         </Box>
 
-        <Box px={{ xs: "10px", md: "50px" }}>
+        <Box px={{ xs: "20px", md: "50px" }} boxSizing={'border-box'}>
           <Typography
             color={"#343f52"}
             lineHeight={1.2}
@@ -40,7 +40,7 @@ const Playstore = () => {
             and book your service, all in a few taps.
           </Typography>
 
-          <Box display={"flex"} columnGap={"10px"}>
+          <Box display={{md:"flex",xs:'grid'}} gridTemplateColumns={'1fr,1fr'} columnGap={"10px"} rowGap={'10px'}>
             <img
               src="https://hometriangle.com/web/assets/images/icons/button-google-play.svg"
               width={"203px"}
@@ -88,13 +88,14 @@ const Playstore = () => {
         <Box
           px={{ xs: "10px", md: "35px" }}
           ml={{ xs: "10px", md: "94px" }}
-          mr={"30px"} mt={{xs:'40px'}}  position="relative"
+          mr={{md:"30px"}} mt={{xs:'40px'}}  position="relative"
         >
           <Typography
             color={"#343f52"}
-            lineHeight={1.65}
+            lineHeight={1}
             fontWeight={700}
             fontSize={"40px"}
+            my={{xs:'20px'}}
           >
             Find your expert.
           </Typography>
@@ -106,7 +107,7 @@ const Playstore = () => {
             fontSize={"19px"}
             mb={"30px"}
           >
-            With HomeTriangle you will find the best Professionals in the area,
+            With HomeTadalal you will find the best Professionals in the area,
             whatever your need.
           </Typography>
 

@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Slider from "react-slick";
 
+
 const PopularProjects = () => {
 
     const projects = [
@@ -36,13 +37,39 @@ max:'3L'},
 
     ]
 
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    };
+
 
   return (
     <Box >
         <Box mb={'7rem'}>
         <Typography fontSize={'26px'} color={'#343f52'} fontWeight={'700'} mb={'20px'} px={'15px'}>Popular Projects</Typography>
 <Box>
-    <Box display={'flex'} columnGap={'40px'}>
+    <Box  columnGap={{md:'30px',xs:'10px'}} padding={{xs:'20px'}}>
+    <Slider {...settings}>
+
         {projects.map(({img,title,min,max})=>{
             return (
 
@@ -59,7 +86,7 @@ max:'3L'},
             {title}
           </Typography>
           <Typography color={'#3f78e0'} fontSize={'18px'} fontWeight={500}>
-        ₹{min} - ₹{max}
+        SAR{min} - SAR{max}
         </Typography>
           
         </CardContent>
@@ -69,6 +96,8 @@ max:'3L'},
 
             )
         })}
+
+</Slider>
     
     
     </Box>

@@ -76,19 +76,25 @@ const styles = {
     <Box
        
         alignItems={"center"}
+        alignSelf={'center'}
+        alignContent={'center'}
         display={"grid"}
         gridTemplateColumns={{ xs: "1fr", md: "1fr 1fr" }}
         width={'95%'}
         borderRadius={'20px'}
-        boxShadow={'0rem 0.25rem 1.75rem rgba(30, 34, 40, 0.07) !important'}
+        boxShadow={{md:'0rem 0.25rem 1.75rem rgba(30, 34, 40, 0.07) !important'}}
         margin={'auto'}
          mb={'9rem'}
          bgcolor={'#fff'}
+         
+         textAlign={'center'}
+         justifyContent={'center'}
+         justifyItems={'center'}
       >
        
 
 
-<Box px={{ xs: "10px", md: "50px" }} textAlign={'center'} >
+<Box px={{ xs: "0px", md: "50px" }} mb={{xs:'20px'}} textAlign={'center'}  >
       
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -99,13 +105,16 @@ const styles = {
         {reviews.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <Box>
+              <Box >
                 <Typography
+                sx={{overflowWrap:'break-word'}}
+                
               color={"#60697B"}
               lineHeight={1.5}
               fontWeight={500}
               fontSize={"20px"}
               my={"30px"}
+              width={'93%'}
             >
               {step.review}
             </Typography>
@@ -153,7 +162,7 @@ const styles = {
     </Box>
           
 
-        <Box>
+        <Box width={{md:'100%',xs:'90%'}} >
           <img
             src="https://hometriangle.com/web/assets/images/review1.webp"
             width={"100%"} height={'120%'}

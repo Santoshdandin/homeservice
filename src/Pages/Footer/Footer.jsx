@@ -14,7 +14,7 @@ const Footer = () => {
     const social = ['FacebookIcon','TwitterIcon','InstagramIcon']
   return (
     <Box bgcolor={'#fefefe'}>
-        <Box width={{xs:'100%',md:'85%'}} margin={'auto'} pt={'40px'} >
+        <Box width={{xs:'100%',md:'85%'}} margin={'auto'} pt={'40px'} pb={{xs:'75px',md:'0px'}} >
 <Box display={'grid'} gridTemplateColumns={{xs:'1fr',md:'2fr 1fr 1fr 1fr'}} rowGap={'15px'} pb={'20px'}>
     <Box  px={{xs:'5px',md:'15px'}}>
         
