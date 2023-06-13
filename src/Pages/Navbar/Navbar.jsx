@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect,useRef } from "react";
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -13,12 +13,14 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { CardMedia } from '@mui/material';
+import { CardMedia, Link } from '@mui/material';
+
+import "../Navbar/Navbar.css";
 
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
 
-const pages = ['Cost Guide', 'Blogs', 'Login'];
+const pages = ['services', 'blogs', 'login'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 // import logo from '../../../public/Assets/Images/1.svg'
@@ -27,6 +29,24 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
 const Navbar = () => {
+
+  const [navBackground, setNavBackground] = useState("appBarTransparent");
+   const navRef = useRef();
+   navRef.current = navBackground;
+   useEffect(() => {
+     const handleScroll = () => {
+       const show = window.scrollY > 50;
+       if (show) {
+         setNavBackground("appBarSolid");
+       } else {
+         setNavBackground("appBarTransparent");
+       }
+     };
+     document.addEventListener("scroll", handleScroll);
+     return () => {
+       document.removeEventListener("scroll", handleScroll);
+     };
+   }, []);
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -72,24 +92,27 @@ const Navbar = () => {
 
       </Box>
 
-<AppBar position="static"  sx={{padding:'10px',bgcolor:'#6A8D92',color:'inherit'}} >
+<Box  className={navRef.current}  sx={{padding:'10px',color:'#343f52'}} >
     <Container maxWidth="xl">
       <Toolbar disableGutters>
-        <Box display={'flex'} width={'100%'} justifyContent={'space-between'} mx={'60px'}>
-        <CardMedia
-        sx={{  mr: 1,height:'70px',width:'110px' }}
-        image="Assets/Images/Logo2.png"
-      />
+        <Box display={'flex'} width={'100%'} justifyContent={'space-between'} mx={{md:'60px',xs:'10px'}}>
+<Link href='/'>
+<img src='/Assets/Images/Logo2.png' width={'110px'} height={'75px'}/>
+        {/* <CardMedia
+        sx={{  height:'75px',width:'110px' }}
+        image="/Assets/Images/Logo2.png"
+      /> */}
+      </Link>
 
 <Box sx={{  display:'flex'}}>
           {pages.map((page) => (
-            <Button
+           <Link href={`/${page}`} color="inherit" underline="none"> <Button
               key={page}
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color:'#2B061E', display: 'block',textTransform:'none',fontSize:'18px', fontWeight:'500',":hover":{textDecoration:'underline',transition:''} }}
+              sx={{ my: 2, display: 'block',color:'inherit',textTransform:'capitalize',fontSize:'18px', fontWeight:'500',textDecoration:'bold',":hover":{color:'#ff914d'} }}
             >
               {page}
-            </Button>
+            </Button> </Link>
           ))}
         </Box>
 
@@ -102,7 +125,7 @@ const Navbar = () => {
         
       </Toolbar>
     </Container>
-  </AppBar>
+  </Box>
     </Box>
     
   );
