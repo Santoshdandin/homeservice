@@ -23,6 +23,7 @@ import ReviewsSlider from "../Home/ReviewsSlider";
 
 import servicesData from '../../Data/ServecesData.json';
 import BrowseByCategory from "../Home/BrowseByCategory";
+import GetQuote from "./GetQuote";
 
 const ServiceSelected = () => {
     const params = useParams();
@@ -102,7 +103,7 @@ const searchQuery = params.name
 
               {/* Heading */}
 
-              <Box display={'flex'} flexDirection={'column'} alignItems={{xs:'center',md:'flex-Start'}}>
+              <Box display={'flex'} flexDirection={'column'}  alignItems={{xs:'center',md:'flex-Start'}}>
                 <Typography
                 color={'#343f52'}
                   fontSize={"3rem"}
@@ -247,28 +248,9 @@ const searchQuery = params.name
               </Box>
             </Box>
 
-            <Button
-              sx={{
-                display: "block",
-                width: "100%",
-                maxWidth: "20rem",
-                mt: "3rem",
-                color: "#343f52",
-                borderRadius: "0.625rem",
-                padding: "0.875rem",
-                fontSize: "1.25rem",
-                textTransform: "unset",
-                fontWeight: "500",
-                boxSizing: "border-box",
-                background: "#C1FF72",
-                transition: "all 300ms ease 0s",
-                ":hover":{background: "#9acc5b"}
-              }}
-              variant="contained"
-              size="large"
-            >
-              Get Quote
-            </Button>
+            
+
+            <GetQuote service={service}/>
                 
               </Box>
             </Box>
