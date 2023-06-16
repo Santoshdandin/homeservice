@@ -1,33 +1,24 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-
-import Rating from '@mui/material/Rating';
-import StarIcon from '@mui/icons-material/Star';
-
-
 import { useParams } from "react-router-dom";
+
+import {CardMedia,Typography,Box,Accordion,AccordionSummary,AccordionDetails} from "@mui/material";
+
 import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
 
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-
-
+import Rating from '@mui/material/Rating';
+import StarIcon from '@mui/icons-material/Star';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import ReviewsSlider from "../Home/ReviewsSlider";
-
 import servicesData from '../../Data/ServecesData.json';
 import BrowseByCategory from "../Home/BrowseByCategory";
 import GetQuote from "./GetQuote";
 
+
 const ServiceSelected = () => {
     const params = useParams();
-const searchQuery = params.name
+    const searchQuery = params.name
     const filteredServices = servicesData.filter((service) =>
     service.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -87,8 +78,8 @@ const searchQuery = params.name
               {/* Image */}
               <Box >
                 <Box
-                  width={"300px"}
-                  height={"300px"}
+                  width={{md:"300px",xs:'200px'}}
+                  height={{md:"300px",xs:'200px'}}
                   borderRadius={"1.25rem"}
                   overflow={"hidden"}
                   boxShadow={"rgba(0, 0, 0, 0.25) 0rem 0.25rem 0.25rem"}
@@ -248,7 +239,7 @@ const searchQuery = params.name
               </Box>
             </Box>
 
-            
+            {/* Get Quote */}
 
             <GetQuote service={service}/>
                 

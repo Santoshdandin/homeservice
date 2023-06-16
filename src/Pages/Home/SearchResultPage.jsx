@@ -1,32 +1,50 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation,useParams } from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import servicesData from '../../Data/ServecesData.json';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Link } from '@mui/material';
+import axios from "axios"
 
 const SearchResultsPage = () => {
  
   const location = useLocation();
   const searchQuery = new URLSearchParams(location.search).get('query');
+
+  const [data, setData] = useState([]);
   // Filter the services data based on the search query
   const [filteredData, setFilteredData] = useState([]);
 
+const getData = function (){
+  axios.get('https://lazy-ruby-shawl.cyclic.app/homeservices')
+  .then(response => {
+    setData(response.data);
+    
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+}
+
+
+  
+
   useEffect(() => {
    
-  
+    getData()
+
     if (searchQuery) {
-      const filteredResults = servicesData.filter((service) =>
+      const filteredResults = data.filter((service) =>
       service.title?.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setFilteredData(filteredResults);
     } else {
-      setFilteredData(servicesData);
+      setFilteredData(data);
     }
-  }, [location]);
+  }, [location,data,searchQuery]);
 
   // const filteredServices = servicesData.filter((service) =>
   //   service.title?.toLowerCase().includes(searchQuery.toLowerCase())

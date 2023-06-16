@@ -1,19 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Autocomplete from '@mui/material/Autocomplete';
-import servicesData from '../../Data/ServecesData.json'
+// import servicesData from '../../Data/ServecesData.json'
 import SearchIcon from '@mui/icons-material/Search';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import axios from "axios"
 
 
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
+  const [data, setData] = useState([]);
   const navigate = useNavigate();
+
+
+  const getData = function (){
+    axios.get('https://lazy-ruby-shawl.cyclic.app/homeservices')
+    .then(response => {
+      setData(response.data);
+      
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+  }
+
+
+  useEffect(() => {
+    getData()
+  }, []);
 
   const handleSearch = () => {
     navigate(`/services/search?query=${encodeURIComponent(searchQuery)}`);
@@ -25,7 +44,7 @@ const SearchPage = () => {
   
    setSearchQuery(value);
 
-   const matchingServices = servicesData.filter(
+   const matchingServices = data.filter(
      (service) =>
        service.title.toLowerCase().includes(value.toLowerCase())
    );
@@ -57,7 +76,6 @@ const SearchPage = () => {
         display: 'flex',
         backgroundColor:'#f1f5fd',
         alignItems: 'center',
-        display:'flex',
         flexDirection:'column',
         marginBottom:'7rem',
         justifyContent:'center'
@@ -70,7 +88,7 @@ const SearchPage = () => {
           <Typography position={'relative'} component={'span'} fontWeight={700} fontSize={{md:'52px',xs:'35px'}} lineHeight={1.2} >
            easier
            <Box position={'absolute'} top={{md:'-14px',xs:'-35px'}} right={0}>
-           <img src='/Assets/Images/underline.svg' width={'150px'}  />
+           <img src='/Assets/Images/underline.svg' width={'150px'} alt="underline.svg"  />
 
            </Box>
           </Typography>

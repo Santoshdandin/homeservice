@@ -1,5 +1,5 @@
-
 import React, { useState,useRef,useEffect } from 'react';
+
 import {
     Box,
   Dialog,
@@ -9,29 +9,38 @@ import {
   Button,
   TextField,
   Snackbar,
- Alert
+ Alert,
+ 
 } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import axios from "axios";
 
 
 
 const GetQuote = ({service}) => {
 
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-    const [open, setOpen] = useState(false);
+
     const [formData, setFormData] = useState({
-        name: '',
-        city: '',
-        location: '',
-        mobile: '',
-        serviceRequired:service.title
-      });
-  const [error, setError] = useState(false);
+      name: '',
+      city: '',
+      location: '',
+      mobile: '',
+      
+      
+      
+    });
+    
+  const [open, setOpen] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertSeverity, setAlertSeverity] = useState('info');
   const [alertMessage, setAlertMessage] = useState('');
   const [otpDialogOpen, setOtpDialogOpen] = useState(false);
   const [otp, setOtp] = useState('');
-  const [otpInput, setOtpInput] = useState('');
+
   const [timer, setTimer] = useState(180); // Timer in seconds
   const [otpInputs, setOtpInputs] = useState(['', '', '', '', '', '']);
   const countdownIntervalRef = useRef(null);
@@ -45,7 +54,7 @@ const GetQuote = ({service}) => {
 
   const handleOtpDialogClose = () => {
     setOtpDialogOpen(false);
-    setOtpInput('');
+    setOtpInputs(['', '', '', '', '', '']);
     resetTimer();
   };
 
@@ -83,18 +92,13 @@ const GetQuote = ({service}) => {
 
   const handleClose = () => {
     setOpen(false);
-    setFormData({
-        name: '',
-        city: '',
-        location: '',
-        mobile: '',
-      });
+    
   };
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value,status:'pending',serviceRequired:service.title
     });
   };
 
@@ -148,16 +152,16 @@ const GetQuote = ({service}) => {
     const enteredOtp = otpInputs.join('');
     if (enteredOtp === otp) {
       // Post form data to JSON endpoint using Axios
-    //   axios
-    //     .post('https://example.com/api/quotes', formData)
-    //     .then((response) => {
-    //       // Handle response data as needed
-    //       console.log('Response:', response.data);
-    //       handleOtpDialogClose();
-    //     })
-    //     .catch((error) => {
-    //       console.error('Error:', error);
-    //     });
+      axios
+        .post('https://lazy-ruby-shawl.cyclic.app/orders', formData)
+        .then((response) => {
+          // Handle response data as needed
+          console.log('Response:', response.data);
+          handleOtpDialogClose();
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     console.log(formData)
     handleOtpDialogClose()
     setAlertSeverity('success');
@@ -231,8 +235,9 @@ const GetQuote = ({service}) => {
               }} size={'large'} variant="contained" onClick={handleOpen}>
         Get a Quote
       </Button>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Get a Quote</DialogTitle>
+      <Dialog fullScreen={fullScreen} open={open} onClose={handleClose} >
+        <Box sx={{bgcolor:'#fefefe',maxWidth:'500px'}}>
+        <DialogTitle>Get a Quote for <Box component="span" color={'#FF914D'} fontSize={'22px'} fontWeight={700}>{service.title}</Box> </DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
@@ -263,6 +268,7 @@ const GetQuote = ({service}) => {
             required
           />
           <TextField
+          
             margin="dense"
             label="Mobile Number"
             name='mobile'
@@ -270,16 +276,52 @@ const GetQuote = ({service}) => {
             value={formData.mobile}
             onChange={handleInputChange}
             required
+            inputProps={{
+              maxLength: 10,
+            }}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button sx={{
+                display: "block",
+                width: "100%",
+                maxWidth: "6rem",
+              
+                color: "#343f52",
+                borderRadius: "0.625rem",
+                padding: "10px",
+                fontSize: "1rem",
+                textTransform: "capitalize",
+                fontWeight: "500",
+                boxSizing: "border-box",
+                background: "#C1FF72",
+                transition: "all 300ms ease 0s",
+                ":hover":{background: "#9acc5b"}
+              }} size={'large'} variant="contained" onClick={handleClose} >
             Cancel
           </Button>
-          <Button onClick={handleSubmit} color="primary">
+          <Button sx={{
+                display: "block",
+                width: "100%",
+                maxWidth: "6rem",
+              
+                color: "#343f52",
+                borderRadius: "0.625rem",
+                padding: "10px",
+                fontSize: "1rem",
+                textTransform: "capitalize",
+                fontWeight: "500",
+                boxSizing: "border-box",
+                background: "#C1FF72",
+                transition: "all 300ms ease 0s",
+                ":hover":{background: "#9acc5b"}
+              }} size={'large'} variant="contained" onClick={handleSubmit} >
             Submit
           </Button>
         </DialogActions>
+
+        </Box>
+        
       </Dialog>
       <Snackbar
         open={alertOpen}
@@ -290,7 +332,7 @@ const GetQuote = ({service}) => {
      {alertMessage}
     </Alert></Snackbar>
 
-    <Dialog open={otpDialogOpen} onClose={handleOtpDialogClose}>
+    <Dialog  fullScreen={fullScreen} open={otpDialogOpen} onClose={handleOtpDialogClose}>
         <DialogTitle>Enter OTP</DialogTitle>
         <DialogContent>
           <Box display="flex" columnGap={'10px'} justifyContent="center">
@@ -309,11 +351,56 @@ const GetQuote = ({service}) => {
           </Box>
           <p>Time Remaining: {timer} seconds</p>
 
-          <Button onClick={handleResendOtp}>Resend OTP</Button>
+          <Button sx={{
+                display: "block",
+                width: "100%",
+                maxWidth: "6rem",
+              
+                color: "#343f52",
+                borderRadius: "0.625rem",
+                padding: "0.875rem",
+                fontSize: "1rem",
+                textTransform: "capitalize",
+                fontWeight: "500",
+                boxSizing: "border-box",
+                background: "#C1FF72",
+                transition: "all 300ms ease 0s",
+                ":hover":{background: "#9acc5b"}
+              }} size={'large'} variant="contained" onClick={handleResendOtp}>Resend</Button>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleOtpDialogClose}>Cancel</Button>
-          <Button onClick={verifyOtp}>Submit</Button>
+          <Button sx={{
+                display: "block",
+                width: "100%",
+                maxWidth: "6rem",
+              
+                color: "#343f52",
+                borderRadius: "0.625rem",
+                padding: "10px",
+                fontSize: "1rem",
+                textTransform: "capitalize",
+                fontWeight: "500",
+                boxSizing: "border-box",
+                background: "#C1FF72",
+                transition: "all 300ms ease 0s",
+                ":hover":{background: "#9acc5b"}
+              }} size={'large'} variant="contained" onClick={handleOtpDialogClose}>Cancel</Button>
+          <Button sx={{
+                display: "block",
+                width: "100%",
+                maxWidth: "6rem",
+              
+                color: "#343f52",
+                borderRadius: "0.625rem",
+                padding: "10px",
+                fontSize: "1rem",
+                textTransform: "capitalize",
+                fontWeight: "500",
+                boxSizing: "border-box",
+                background: "#C1FF72",
+                transition: "all 300ms ease 0s",
+                ":hover":{background: "#9acc5b"}
+              }} size={'large'} variant="contained" onClick={verifyOtp}>Submit</Button>
         </DialogActions>
       </Dialog>
     </Box>

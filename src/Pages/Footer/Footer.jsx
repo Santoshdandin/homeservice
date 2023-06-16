@@ -11,7 +11,7 @@ const Footer = () => {
 
     const learnMore = ['designs','reviews','blogs','articles','professionals']
     const help = ['contact us','about us','careers','Terms of use','privacy policy','refund policy']
-    const social = ['FacebookIcon','TwitterIcon','InstagramIcon']
+    // const social = ['FacebookIcon']
   return (
     <Box bgcolor={'#fefefe'}>
         <Box width={{xs:'100%',md:'85%'}} margin={'auto'} pt={'40px'} pb={{xs:'75px',md:'0px'}} >
@@ -55,7 +55,7 @@ const Footer = () => {
     return (
         <Typography
             color={"#60697B"}
-            
+            key={title}
             lineHeight={1.65}
             fontWeight={500}
             fontSize={'"18px"'}
@@ -89,7 +89,7 @@ const Footer = () => {
     return (
         <Typography
         color={"#60697B"}
-            
+           key={title} 
         lineHeight={1.65}
         fontWeight={500}
         fontSize={'"18px"'}
@@ -148,6 +148,27 @@ const Footer = () => {
             columnGap={"1.5rem"}
             padding={"0rem 1.75rem"}
             sx={{ width: "max-content" }}>
+
+              {/* {social.map((el)=>{
+                return (
+                  <Box
+              width={"35px"}
+              height={"35px"}
+              borderRadius={"50%"}
+              bgcolor={"#2e3438"}
+              textAlign={"center"}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              sx={{
+                cursor: "pointer",
+                ":hover": { backgroundColor: "#ff914d" },
+              }}>
+              <`${el}`/>
+            </Box>
+
+                )
+              })} */}
             <Box
               width={"35px"}
               height={"35px"}
