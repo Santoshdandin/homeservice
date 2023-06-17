@@ -5,7 +5,7 @@ const Admin = () => {
 
   return (
    <Box display={'flex'} flexDirection={'column'}  columnGap={'50px'} pb={'100px'} alignItems={'center'} bgcolor={'#f1f5fd'}>
-   <Box display={'flex'} columnGap={'50px'}>
+   <Box display={'flex'} columnGap={{md:'50px',xs:'20px'}}>
    <Link href="/admin/editservices" color="inherit" underline="none"> <Button sx={{
                 display: "block",
                 

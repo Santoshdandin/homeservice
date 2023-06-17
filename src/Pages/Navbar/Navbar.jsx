@@ -175,7 +175,7 @@ const Navbar = () => {
                     alignItems={"center"}
                   >
                     <img
-                      src="Assets/Images/nav-home.svg"
+                      src="/Assets/Images/nav-home.svg"
                       width={"20px"}
                       height={"20px"}
                       alt="nav-home-icon"

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { TableContainer,Link,Button,TextField, Table, TableHead, TableRow, TableCell, TableBody, Select, MenuItem, Box } from '@mui/material';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+import { tableCellClasses } from '@mui/material/TableCell';
 
 const Orders = () => {
 
@@ -77,8 +80,29 @@ const [filteredServices, setFilteredServices] = useState([]);
     }
   };
 
+  const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+      backgroundColor: theme.palette.common.black,
+      color: theme.palette.common.white,
+    },
+    [`&.${tableCellClasses.body}`]: {
+      fontSize: 14,
+    },
+  }));
+  
+  const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    '&:last-child td, &:last-child th': {
+      border: 0,
+    },
+  }));
+  
+
   return (
-    <Box maxWidth={{xs:'95%',md:'85%'}} backgroundColor={'#f1f5fd'} >
+    <Box  backgroundColor={'#f1f5fd'} >
 
 <Box columnGap={'30px'}  maxWidth={{xs:'95%',md:'85%'}}  mt={'20px'} margin={'auto'}>
       <Link href="/admin" color="inherit" underline="none"> <Button sx={{
@@ -118,9 +142,10 @@ const [filteredServices, setFilteredServices] = useState([]);
 
 </Box>
       </Box>
-      <Box  maxWidth={{xs:'95%',md:'85%'}}  margin={'auto'} pb={'6rem'}>
 
-      <TableContainer style={{ margin: '0px',padding:'0px' }}>
+      <Box   maxWidth={{xs:'95%',md:'85%'}}  margin={'auto'} pb={'6rem'}>
+
+      {/* <TableContainer style={{ margin: '0px',padding:'0px' }}>
       <Table size="small"  sx={{ borderCollapse: 'separate', borderSpacing: '0',width: 650,margin:'auto'  }}>
         <TableHead>
           <TableRow bgcolor={'#ff914d'} >
@@ -136,29 +161,75 @@ const [filteredServices, setFilteredServices] = useState([]);
         </TableHead>
         <TableBody>
           {filteredServices.map((row) => (
-            <TableRow key={row.id}  style={{ backgroundColor: getStatusColor(row.status) }}>
+            <TableRow key={row.id}  >
               <TableCell>{row.id}</TableCell>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.city}</TableCell>
               <TableCell>{row.location}</TableCell>
               <TableCell>{row.mobile}</TableCell>
               <TableCell>{row.serviceRequired}</TableCell>
-              <TableCell>
+              <TableCell >
                 <select
                 value={ row.status}
                 defaultValue="Pending"
                  
                   onChange={(event) => handleStatusChange(event, row.id)}
-                  width={'50px'} style={{background:'transparent',padding:'10px 20px',cursor:'pointer',lineHeight:'4'}}
+                  width={'50px'} style={{background:'transparent',padding:'10px 20px',cursor:'pointer',lineHeight:'4',color: getStatusColor(row.status)}}
                  
                 >
-                  <option style={{background:'transparent',padding:'10px 20px',cursor:'pointer',lineHeight:'4'} }value="Pending" >Pending</option>
+                  <option value="Pending" >Pending</option>
                   <option value="Processing">Processing</option>
                   <option value="Completed">Completed</option>
                   <option value="Rejected">Rejected</option>
                 </select>
               </TableCell>
             </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer> */}
+
+
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>ID</StyledTableCell>
+            <StyledTableCell >Name</StyledTableCell>
+            <StyledTableCell >City</StyledTableCell>
+            <StyledTableCell >Location</StyledTableCell>
+            <StyledTableCell >Mobile</StyledTableCell>
+            <StyledTableCell >Service Requested</StyledTableCell>
+            <StyledTableCell >Status</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {filteredServices.map((row) => (
+            <StyledTableRow key={row.name}>
+              <StyledTableCell component="th" scope="row">
+                {row.id}
+              </StyledTableCell>
+              <StyledTableCell >{row.name}</StyledTableCell>
+              <StyledTableCell >{row.city}</StyledTableCell>
+              <StyledTableCell >{row.location}</StyledTableCell>
+              <StyledTableCell >{row.mobile}</StyledTableCell>
+              <StyledTableCell >{row.serviceRequired}</StyledTableCell>
+              <StyledTableCell >
+              <select
+                value={ row.status}
+                defaultValue="Pending"
+                 
+                  onChange={(event) => handleStatusChange(event, row.id)}
+                  width={'50px'} style={{background:'transparent',padding:'10px 20px',cursor:'pointer',lineHeight:'4',color: 'black',borderRadius:'30px',backgroundColor:getStatusColor(row.status)}}
+                 
+                >
+                  <option value="Pending" >Pending</option>
+                  <option value="Processing">Processing</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Rejected">Rejected</option>
+                </select>
+              </StyledTableCell>
+            </StyledTableRow>
           ))}
         </TableBody>
       </Table>
