@@ -1,12 +1,13 @@
 import React from 'react'
 import SearchPage from './SearchPage'
 import Box from '@mui/material/Box';
-import Slider from '../Home/ImageSlider'
+// import Slider from '../Home/ImageSlider'
 import PopularProjects from './PopularProjects';
 import BrowseByCategory from './BrowseByCategory';
-import Slide from './Slide';
+// import Slide from './Slide';
 import Playstore from './Playstore';
-import ReviewsSlider from './ReviewsSlider';
+// import ReviewsSlider from './ReviewsSlider';
+import ReviewSlickSlider from './ReviewSlickSlider';
 
 const Home = () => {
   return (
@@ -18,7 +19,8 @@ const Home = () => {
       <PopularProjects/>
       <BrowseByCategory/>
       <Playstore/>
-      <ReviewsSlider/>
+      {/* <ReviewsSlider/> */}
+      <ReviewSlickSlider/>
       {/* <Slide/> */}
 
 </Box>

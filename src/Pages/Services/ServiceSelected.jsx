@@ -10,10 +10,11 @@ import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import ReviewsSlider from "../Home/ReviewsSlider";
+// import ReviewsSlider from "../Home/ReviewsSlider";
 import servicesData from '../../Data/ServecesData.json';
 import BrowseByCategory from "../Home/BrowseByCategory";
 import GetQuote from "./GetQuote";
+import ReviewSlickSlider from "../Home/ReviewSlickSlider";
 
 
 const ServiceSelected = () => {
@@ -394,7 +395,7 @@ maxWidth={"1168px"}
 
 <Box paddingTop={'60px'}>
 
-<ReviewsSlider/>
+<ReviewSlickSlider/>
 </Box>
 
 <BrowseByCategory/>
