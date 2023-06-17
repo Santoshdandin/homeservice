@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Select, MenuItem, Box } from '@mui/material';
+import { TableContainer,Link,Button,TextField, Table, TableHead, TableRow, TableCell, TableBody, Select, MenuItem, Box } from '@mui/material';
 
 const Orders = () => {
 
   const [data, setData] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
+const [filteredServices, setFilteredServices] = useState([]);
 
   useEffect(() => {
     axios
@@ -12,11 +14,14 @@ const Orders = () => {
       .then((response) => {
         
         setData(response.data);
+        setFilteredServices(response.data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
   }, []);
+
+  
 
   const handleStatusChange = (event, id) => {
     const updatedData = data.map((item) => {
@@ -40,6 +45,21 @@ const Orders = () => {
     // Update the JSON file
 
   };
+
+  useEffect(() => {
+    let filteredData = data;
+
+    // Filter by search input
+    if (searchInput) {
+      filteredData = filteredData.filter((service) =>
+        service.name.toLowerCase().includes(searchInput.toLowerCase()) || service.mobile.includes(searchInput)
+      );
+    }
+  
+  
+  
+    setFilteredServices(filteredData);
+  }, [data, searchInput]);
   
 
   const getStatusColor = (status) => {
@@ -58,7 +78,46 @@ const Orders = () => {
   };
 
   return (
-    <Box backgroundColor={'#f1f5fd'} >
+    <Box maxWidth={{xs:'95%',md:'85%'}} backgroundColor={'#f1f5fd'} >
+
+<Box columnGap={'30px'}  maxWidth={{xs:'95%',md:'85%'}}  mt={'20px'} margin={'auto'}>
+      <Link href="/admin" color="inherit" underline="none"> <Button sx={{
+                display: "block",
+                
+                width: "10rem",
+              mb:"30px",
+                color: "#343f52",
+                borderRadius: "0.625rem",
+                padding: "10px",
+                fontSize: "1rem",
+                textTransform: "capitalize",
+                fontWeight: "500",
+                boxSizing: "border-box",
+                background: "#C1FF72",
+                transition: "all 300ms ease 0s",
+                ":hover":{background: "#9acc5b"}
+              }} size={'large'} variant="contained"  >
+           Admin page
+          </Button> </Link>
+
+          <Box 
+  display="flex"
+  flexDirection="row"
+  alignItems="center"
+  justifyContent="space-between"
+  marginBottom="1rem"
+>
+  <TextField
+  sx={{bgcolor:'#fff'}}
+    label="Search"
+    placeholder='Search service'
+    value={searchInput}
+    onChange={(e) => setSearchInput(e.target.value)}
+    margin="dense"
+  />
+
+</Box>
+      </Box>
       <Box  maxWidth={{xs:'95%',md:'85%'}}  margin={'auto'} pb={'6rem'}>
 
       <TableContainer style={{ margin: '0px',padding:'0px' }}>
@@ -76,7 +135,7 @@ const Orders = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((row) => (
+          {filteredServices.map((row) => (
             <TableRow key={row.id}  style={{ backgroundColor: getStatusColor(row.status) }}>
               <TableCell>{row.id}</TableCell>
               <TableCell>{row.name}</TableCell>

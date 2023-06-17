@@ -169,7 +169,7 @@ const [filteredServices, setFilteredServices] = useState([]);
     <Box backgroundColor={'#f1f5fd'} >
 
 
-      <Box display={'flex'} columnGap={'30px'}  maxWidth={{xs:'95%',md:'85%'}}  mt={'20px'} margin={'auto'}>
+      <Box  columnGap={'30px'}  maxWidth={{xs:'95%',md:'85%'}}  mt={'20px'} margin={'auto'}>
       <Link href="/admin" color="inherit" underline="none"> <Button sx={{
                 display: "block",
                 
@@ -318,8 +318,8 @@ const [filteredServices, setFilteredServices] = useState([]);
        <Button  startIcon={<AddIcon fontSize='18px'/>} sx={{
         
         position:'fixed',
-        top:"155px",
-        right:'30px',
+        top:"165px",
+        right:'20px',
         
       
         color: "#343f52",

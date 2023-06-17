@@ -4,7 +4,8 @@ import React from 'react'
 const Admin = () => {
 
   return (
-   <Box display={'flex'} justifyContent={'center'} columnGap={'50px'} height={'450px'} alignItems={'center'} bgcolor={'#f1f5fd'}>
+   <Box display={'flex'} flexDirection={'column'}  columnGap={'50px'} pb={'100px'} alignItems={'center'} bgcolor={'#f1f5fd'}>
+   <Box display={'flex'} columnGap={'50px'}>
    <Link href="/admin/editservices" color="inherit" underline="none"> <Button sx={{
                 display: "block",
                 
@@ -42,6 +43,29 @@ const Admin = () => {
               }} size={'large'} variant="contained"  >
            Orders
           </Button> </Link>
+
+   </Box>
+   
+
+<Box color={'#fff'} rowGap={'30px'} textAlign={'center'} fontSize={'700'} display={'grid'} columnGap={'20px'} mt={'60px'} gridTemplateColumns={{xs:'1fr',md:'1fr 1fr 1fr'}}>
+
+<Box bgcolor={'#3c3d40'} fontSize={'32px'} padding={'30px'} borderRadius={'20px'} boxShadow={5} >
+            Total services
+            <Box >40+</Box>
+          </Box>
+
+          <Box bgcolor={'#3c3d40'} fontSize={'32px'} padding={'30px'} borderRadius={'20px'} boxShadow={5} >
+           Services completed
+           <Box >1000+</Box>
+          </Box>
+
+          <Box bgcolor={'#3c3d40'} fontSize={'32px'} padding={'30px'} borderRadius={'20px'} boxShadow={5} >
+            Services pending
+            <Box >32</Box>
+          </Box>
+
+</Box>
+          
    </Box>
   )
 }
