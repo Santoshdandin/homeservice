@@ -321,7 +321,6 @@ const [filteredServices, setFilteredServices] = useState([]);
         top:"165px",
         right:'20px',
         
-      
         color: "#343f52",
         borderRadius: "0.625rem",
         padding: "10px",
@@ -332,7 +331,7 @@ const [filteredServices, setFilteredServices] = useState([]);
         background: "#C1FF72",
         transition: "all 300ms ease 0s",
         ":hover":{background: "#9acc5b"}
-      }} size={'large'} variant="contained"   >
+      }} size={'large'} variant="contained" onClick={handleAddNewService}   >
    Add New Service
   </Button>
        
